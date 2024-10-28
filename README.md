@@ -15,3 +15,25 @@ It utilizes Laplace smoothing to estimate bigram probabilities, allowing it to c
   ```python
   import nltk
   nltk.download('brown')
+
+## Usage
+### Initialize and Train the Model
+```python
+bigram_model = BigramModel()
+bigram_model.train(brown_sents)
+```
+### Calculate Sentence Probability
+```python
+sentence = "The dog barked at the cat"
+probability = bigram_model.sentence_probability(sentence)
+print(f"Sentence probability: {probability}")
+```
+### Predict Next Words
+```python
+prefix = "I won 200"
+next_words = bigram_model.predict_next_word(prefix, top_n=5)
+print(f"Predicted next words: {next_words}")
+```
+
+
+
